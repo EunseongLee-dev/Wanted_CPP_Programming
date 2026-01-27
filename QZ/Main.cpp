@@ -144,6 +144,28 @@ int main()
 			std::cin >> name;
 			su.CreateAccount(id, name);
 		}
+		else if (menu == 2)
+		{
+			int id;
+			int money;
+			std::cout << "입금 할 계좌번호 입력: ";
+			std::cin >> id;
+			std::cout << "입금 할 금액: ";
+			std::cin >> money;
+			// 여기서부터 시작
+		}
+		else if (menu == 3)
+		{
+
+		}
+		else if (menu == 4)
+		{
+
+		}
+		else if (menu == 5)
+		{
+
+		}
 	}
 	
 	std::cin.get();
