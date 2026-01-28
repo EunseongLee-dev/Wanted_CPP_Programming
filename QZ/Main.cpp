@@ -15,6 +15,7 @@ public:
 		name = nullptr;
 	}
 
+
 	char* Getname()
 	{
 		return name;
@@ -61,6 +62,7 @@ public:
 			}
 			
 			std::cout << "잔여 계좌 개설 공간 부족\n";
+			return;
 			
 		}
 	}
@@ -104,13 +106,23 @@ public:
 			}
 		}
 	}
-	void Inquire(Account* a)
+	void Inquire()
 	{
-		std::cout
-			<< "이름: " << a->Getname() << "\n"
-			<< "계좌번호: " << a->Getid() << "\n"
-			<< "잔액: " << a->Getlance() << "\n";
+		for (int i = 0; i < 100; ++i)
+		{
+			if (!account[i])
+			{
+				continue;
+			}
+			else
+			{
+				std::cout
+					<< "이름: " << account[i]->Getname() << "\n"
+					<< "계좌번호: " << account[i]->Getid() << "\n"
+					<< "잔액: " << account[i]->Getlance() << "\n\n";
 
+			}
+		}
 	}
 
 private:
@@ -131,7 +143,7 @@ int main()
 			<< "2. 입금\n"
 			<< "3. 출금\n"
 			<< "4. 전체 고객 잔액 조회\n"
-			<< "5. 종료";
+			<< "5. 종료\n";
 		std::cin >> menu;
 
 		if (menu == 1)
@@ -152,19 +164,25 @@ int main()
 			std::cin >> id;
 			std::cout << "입금 할 금액: ";
 			std::cin >> money;
-			// 여기서부터 시작
+			su.Deposit(id, money);
 		}
 		else if (menu == 3)
 		{
-
+			int id;
+			int money;
+			std::cout << "출금 할 계좌번호 입력: ";
+			std::cin >> id;
+			std::cout << "출금 할 금액: ";
+			std::cin >> money;
+			su.Withdraw(id, money);
 		}
 		else if (menu == 4)
 		{
-
+			su.Inquire();
 		}
 		else if (menu == 5)
 		{
-
+			break;
 		}
 	}
 	
