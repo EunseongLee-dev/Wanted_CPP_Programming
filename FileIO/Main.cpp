@@ -1,8 +1,14 @@
 #include <iostream>
 #include "Player.h"
+#include <vector>
 
 int main()
 {
+	std::vector<int> array;
+	
+	/*array.push_back(10);*/
+	array.emplace_back(10); // move 지원
+
 	// 객체를 파일에 쓰기 (파일 직렬화)
 	/*Player player(2, 300, 30.f);*/
 	/*player.Serialize("PlayerData.txt");*/
